@@ -130,6 +130,12 @@ func GetSysCraftTemplateDict() map[string]CraftTemplate {
 		ParamTemplateDefine: beautifyContentParamTmpl,
 		OptionFunc:          beautifyContentCraftLoadParam,
 	}
+	sysCraftTempList["embedding-filter"] = CraftTemplate{
+		Name:                "embedding-filter",
+		Description:         "使用 Embedding 模型进行语义相似度过滤，通过锚点文字实现零样本主题分类",
+		ParamTemplateDefine: embeddingFilterParamTmpl,
+		OptionFunc:          embeddingFilterLoadParam,
+	}
 	return sysCraftTempList
 }
 
